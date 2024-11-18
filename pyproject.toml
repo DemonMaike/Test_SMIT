@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "smit-test-project"
+version = "0.1.0"
+description = "This app is API service for quantity of price for safe service of isurance."
+authors = ["Dmitry Malyshev <i@dmitrymalyshev.ru>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+alembic = "^1.14.0"
+sqlalchemy = "^2.0.36"
+fastapi = "^0.115.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
