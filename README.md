@@ -7,14 +7,31 @@ This is my test exercise for Python middle developer's vacancy for SMIT.Studio c
 - Postgresql
 - Docker / Compose
 - pytest
+- pydantic / pydantic-settings
 - poetry
 
+
 ## Map
-There is first looking need to docs. Here will write structure of app, uml schemas, first logins and passwds etc.
+There is first looking need to docs. Here will write structure of app, UML schemas etc.
 
 ## Quick start
-For quick start you will need start to docker-compose, command for this:
+First, you need update your .env, rename .env-example, from root dir do it:
 ```shell
-docker-compose up --build -d
+mv src/.env-example src/.env
 ```
-or if you want to see the all, than you need to remove "-d" key. 
+ and look, that it is parsed, from root dir do:
+```shell
+python settings.py
+``` 
+You will get some:
+```shell
+{'db': {'host': 'localhost', 'port': 5432, 'user': 'postgres', 'passwd': 'postgres', 'name': 'smit'}}
+```
+if you don't see that, you need to correct your .env or see settings.py and DatabaseSetting class.
+
+
+For quick start of app you need to start a docker-compose from root of project, the command for this:
+```shell
+docker-compose -f ./docker/docker-compose.yml --build -d
+```
+or if you want to see the all, than you need to remove "-d" key.
