@@ -6,31 +6,6 @@
 │   └── versions
 ├── alembic.ini
 ├── docker
-├── docs
-│   └── project_structure.md
-├── LICENSE
-├── poetry.lock
-├── pyproject.toml
-├── README.md
-└── src
-    ├── api
-    ├── db
-    ├── domain
-    ├── __init__.py
-    ├── logs
-    ├── main.py
-    ├── reposetories
-    ├── schemas
-    └── services
-
-.
-├── alembic
-│   ├── env.py
-│   ├── README
-│   ├── script.py.mako
-│   └── versions
-├── alembic.ini
-├── docker
 │   ├── docker-compose.yml
 │   └── Dockerfile
 ├── docs
@@ -43,6 +18,7 @@
 ├── __pycache__
 │   └── settings.cpython-312.pyc
 ├── pyproject.toml
+├── pytest.ini
 ├── README.md
 ├── requirements.txt
 ├── settings.py
@@ -57,4 +33,4 @@
     ├── schemas
     └── tests
 
-14 directories, 19 files
+14 directories, 20 files

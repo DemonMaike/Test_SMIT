@@ -29,8 +29,5 @@ class Settings(BaseSettings):
 
 settings = Settings()
 
-print(Settings().model_dump())
-
-
 if '__name__' == '__main__':
     print(Settings().model_dump())

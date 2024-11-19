@@ -1,7 +1,7 @@
 from typing import AsyncGenerator
 
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
-from domain.models import Base
+from src.domain.models import Base
 from settings import settings
 
 database_settings = settings.db
@@ -22,3 +22,8 @@ async def get_async_session() -> AsyncGenerator[AsyncSession, None]:
 async def create_db():
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
+
+
+async def drop_db():
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.drop_all)

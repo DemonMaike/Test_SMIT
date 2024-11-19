@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
 from typing import List, Optional
+from datetime import date
 
+from sqlalchemy import desc
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 
@@ -58,3 +60,12 @@ class BaseRepository[T](AbstractRepository):
 class RateRepository[T](BaseRepository):
     def __init__(self, session: AsyncSession):
         super().__init__(session, Rate)
+
+    async def get_latest_by_type(self, cargo_type: str) -> Optional[Rate]:
+
+        result = await self.session.execute(
+            select(self.model)
+            .filter(self.model.cargo_type == cargo_type, self.model.date <= date.today())
+            .order_by(desc(self.model.date))
+        )
+        return result.scalars().first()
