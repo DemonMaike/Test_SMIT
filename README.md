@@ -1,37 +1,101 @@
 # About
-This is my test exercise for Python middle developer's vacancy for SMIT.Studio company.
+This is a test exercise for Python Middle Developer position at SMIT.Studio company.
 
-## Main packeges:
+## Main Packages:
 - FastAPI
-- SqlAlchemy
-- Postgresql
-- Docker / Compose
+- SQLAlchemy
+- PostgreSQL
+- Docker / Docker Compose
 - pytest
-- pydantic / pydantic-settings
-- poetry
-
+- Pydantic / Pydantic-settings
+- Poetry
 
 ## Map
-There is first looking need to docs. Here will write structure of app, UML schemas etc.
+You can see:
+- [API Table](docs/api_table.md)
+- [Project Structure](docs/project_structure.md)
 
-## Quick start
-First, you need update your .env, rename .env-example, from root dir do it:
+For class diagram and use case, please use draw.io
+
+## Quick Start
+1. Update your .env file by renaming .env-example from the root directory:
 ```shell
 mv src/.env-example src/.env
 ```
- and look, that it is parsed, from root dir do:
+
+2. Verify environment parsing by running from root directory:
 ```shell
 python settings.py
-``` 
-You will get some:
+```
+
+You should see output similar to:
 ```shell
 {'db': {'host': 'localhost', 'port': 5432, 'user': 'postgres', 'passwd': 'postgres', 'name': 'smit'}}
 ```
-if you don't see that, you need to correct your .env or see settings.py and DatabaseSetting class.
 
+If the output is different, check your .env file or the DatabaseSetting class in settings.py.
 
-For quick start of app you need to start a docker-compose from root of project, the command for this:
+3. Start the application using Docker Compose from the project root:
 ```shell
-docker-compose -f ./docker/docker-compose.yml --build -d
+docker-compose -f ./docker/docker-compose.yml up --build -d
 ```
-or if you want to see the all, than you need to remove "-d" key.
+(Remove "-d" flag to see real-time logs)
+
+4. Access Swagger UI at http://127.0.0.1:8000/docs
+
+5. Test the /rates/ route using the provided catgo-rates.json file in src/tests/tests_files.
+
+6. Upload the file to test data loading into the database.
+
+7. Use the /calculate/ endpoint to calculate insurance cost by modifying declared_value, cargo_type, and date as needed.
+
+# О проекте
+Это тестовое задание на позицию Python Middle разработчика в компании SMIT.Studio.
+
+## Основные пакеты:
+- FastAPI
+- SQLAlchemy
+- PostgreSQL
+- Docker / Docker Compose
+- pytest
+- Pydantic / Pydantic-settings
+- Poetry
+
+## Карта проекта
+Вы можете посмотреть:
+- [Таблицу API](docs/api_table.md)
+- [Структуру проекта](docs/project_structure.md)
+
+Для просмотра диаграммы классов и use case используйте draw.io
+
+## Быстрый старт
+1. Обновите файл .env, переименовав .env-example из корневой директории:
+```shell
+mv src/.env-example src/.env
+```
+
+2. Проверьте парсинг окружения, выполнив из корневой директории:
+```shell
+python settings.py
+```
+
+Вы должны увидеть вывод, похожий на:
+```shell
+{'db': {'host': 'localhost', 'port': 5432, 'user': 'postgres', 'passwd': 'postgres', 'name': 'smit'}}
+```
+
+Если вывод отличается, проверьте ваш файл .env или класс DatabaseSetting в settings.py.
+
+3. Запустите приложение с помощью Docker Compose из корня проекта:
+```shell
+docker-compose -f ./docker/docker-compose.yml up --build -d
+```
+(Удалите флаг "-d" для просмотра логов в реальном времени)
+
+4. Откройте Swagger UI по адресу http://127.0.0.1:8000/docs
+
+5. Протестируйте маршрут /rates/, используя предоставленный файл catgo-rates.json в src/tests/tests_files.
+
+6. Загрузите файл для тестирования загрузки данных в базу данных.
+
+7. Используйте конечную точку /calculate/ для расчета стоимости страховки, изменяя declared_value, cargo_type и дату по необходимости.
