@@ -81,7 +81,7 @@ python settings.py
 
 Вы должны увидеть вывод, похожий на:
 ```shell
-{'db': {'host': 'localhost', 'port': 5432, 'user': 'postgres', 'passwd': 'postgres', 'name': 'smit'}}
+{'db': {'host': 'db', 'port': 5432, 'user': 'postgres', 'passwd': 'postgres', 'name': 'smit'}}
 ```
 
 Если вывод отличается, проверьте ваш файл .env или класс DatabaseSetting в settings.py.
