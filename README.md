@@ -30,7 +30,7 @@ python settings.py
 
 You should see output similar to:
 ```shell
-{'db': {'host': 'localhost', 'port': 5432, 'user': 'postgres', 'passwd': 'postgres', 'name': 'smit'}}
+{'db': {'host': 'db', 'port': 5432, 'user': 'postgres', 'passwd': 'postgres', 'name': 'smit'}}
 ```
 
 If the output is different, check your .env file or the DatabaseSetting class in settings.py.
