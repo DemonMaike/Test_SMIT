@@ -5,7 +5,7 @@ from sqlalchemy.ext.asyncio import (AsyncSession,
                                     create_async_engine)
 from datetime import date
 from src.domain.models import Rate, Base
-from src.domain.reposetoryies import RateRepository
+from src.domain.repositories import RateRepository
 from settings import settings
 
 

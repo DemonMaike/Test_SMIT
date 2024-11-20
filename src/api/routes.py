@@ -6,7 +6,7 @@ from datetime import date
 from src.db.settings import get_async_session
 from src.schemas import schema
 from src.domain import models
-from src.domain.reposetoryies import RateRepository
+from src.domain.repositories import RateRepository
 
 
 router = APIRouter(tags=['For clients'])
