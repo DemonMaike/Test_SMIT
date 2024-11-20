@@ -49,6 +49,15 @@ docker-compose -f ./docker/docker-compose.yml up --build -d
 
 7. Use the /calculate/ endpoint to calculate insurance cost by modifying declared_value, cargo_type, and date as needed.
 
+
+## Additonally
+To maintain code style according to PEP 8 standards when updating the app, you can use formatter.sh.
+Execute it with:
+```shell
+./formatter.sh src
+```
+You can also format other directories by specifying their paths instead of 'src'.
+
 # О проекте
 Это тестовое задание на позицию Python Middle разработчика в компании SMIT.Studio.
 
@@ -99,3 +108,12 @@ docker-compose -f ./docker/docker-compose.yml up --build -d
 6. Загрузите файл для тестирования загрузки данных в базу данных.
 
 7. Используйте конечную точку /calculate/ для расчета стоимости страховки, изменяя declared_value, cargo_type и дату по необходимости.
+
+
+## Дополнительно
+Для поддержания стиля кода согласно стандартам PEP 8 при обновлении приложения, вы можете использовать formatter.sh.
+Запустите его командой:
+```shell
+./formatter.sh src
+```
+Вы также можете форматировать другие директории, указав их пути вместо 'src'.
