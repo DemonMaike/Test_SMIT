@@ -5,8 +5,6 @@ from fastapi import FastAPI
 from src.api.routes import router
 from src.db.settings import create_db, drop_db
 
-porcesses = {}
-
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):

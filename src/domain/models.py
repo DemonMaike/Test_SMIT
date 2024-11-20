@@ -1,4 +1,5 @@
-from sqlalchemy import String, Float, Date, Integer
+import datetime
+from sqlalchemy import String, Float, Integer
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
 
@@ -10,6 +11,6 @@ class Rate(Base):
     __tablename__ = "rates"
     id: Mapped[int] = mapped_column(
         Integer, primary_key=True, autoincrement=True)
-    date: Mapped[Date] = mapped_column(nullable=False)
+    date: Mapped[datetime.date] = mapped_column(nullable=False)
     cargo_type: Mapped[str] = mapped_column(String, nullable=False)
     rate: Mapped[float] = mapped_column(Float, nullable=False)
